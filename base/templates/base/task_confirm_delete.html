@@ -5,14 +5,12 @@
     <title></title>
   </head>
   <body>
-    <h1>Task Form</h1>
-  
-    <a href="{% url 'tasks' %}">Go Back</a>
+    <a href="{% url 'task' task.id %}">Back</a>
   
     <form method="POST" action="">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="submit">
+    {% csrf_token %}
+        <p> Are you sure you want to delete this task?</p>
+        <input type="submit" value="Delete"/>
     </form>
   </body>
 </html>
